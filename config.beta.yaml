@@ -1,0 +1,3 @@
+server:
+    port: 8081
+    mode: test # debug, release, test for gin
