@@ -3,6 +3,7 @@ package config
 import (
 	"flag"
 	"fmt"
+	"os"
 )
 
 // 配置文件格式入口
@@ -22,9 +23,13 @@ func GetConfigFile() (configFile string) {
 	}
 
 	if configFile = GetConfigPath(); configFile != "" {
-		fmt.Printf("您正在使用环境变量 '%s' 指定配置文件: %s\n", GMA_ENV_FILE, configFile)
+		fmt.Printf("您正在使用环境变量 '%s' 指定配置文件: %s\n", GMA_APP_ENV_FILE, configFile)
 		return
 	}
 
 	return
+}
+
+func GetConfigPath() string {
+	return os.Getenv(GMA_APP_ENV_FILE)
 }

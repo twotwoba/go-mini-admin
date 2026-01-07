@@ -11,8 +11,8 @@ const (
 )
 
 const (
-	GMA_APP_ENV  = "GMA_APP_ENV"  // 应用环境变量 dev beta prod
-	GMA_ENV_FILE = "GMA_ENV_FILE" // 配置文件路径 ./config.dev.yaml
+	GMA_APP_ENV      = "GMA_APP_ENV"      // 应用环境变量 dev beta prod
+	GMA_APP_ENV_FILE = "GMA_APP_ENV_FILE" // 配置文件路径 ./config.dev.yaml
 )
 
 func GetEnv() Env {
@@ -25,8 +25,4 @@ func GetEnv() Env {
 	default:
 		return Dev
 	}
-}
-
-func GetConfigPath() string {
-	return os.Getenv(GMA_ENV_FILE)
 }
