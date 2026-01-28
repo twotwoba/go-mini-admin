@@ -1,13 +1,11 @@
 package repository
 
-import (
-	"go-mini-admin/internal/handler"
-	"go-mini-admin/internal/infrastructure/middleware"
+import "go-mini-admin/internal/model"
 
-	"github.com/gin-gonic/gin"
-)
-
-func Setup(mode string, handlers *handler.Handlers, mw *middleware.Middleware) *gin.Engine {
-	r := gin.Default()
-	return r
+type UserRepository interface {
+	GetUserByID(id int) (*model.User, error)
+	GetUserByEmail(email string) (*model.User, error)
+	CreateUser(user *model.User) error
+	UpdateUser(user *model.User) error
+	DeleteUser(id int) error
 }

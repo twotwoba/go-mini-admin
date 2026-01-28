@@ -1,0 +1,18 @@
+{"level":"info","time":"2026-01-28T16:16:27.076+0800","caller":"core/server.go:30","msg":"Logger initialized"}
+{"level":"info","time":"2026-01-28T16:17:15.989+0800","caller":"core/server.go:30","msg":"Logger initialized"}
+{"level":"info","time":"2026-01-28T16:50:19.297+0800","caller":"logger/zap.go:117","msg":"Logger initialized"}
+{"level":"info","time":"2026-01-28T16:53:53.281+0800","caller":"logger/zap.go:117","msg":"Logger initialized"}
+{"level":"info","time":"2026-01-28T19:31:14.825+0800","caller":"logger/zap.go:120","msg":"✅日志初始化完成"}
+{"level":"info","time":"2026-01-28T19:31:14.969+0800","caller":"logger/zap.go:120","msg":"✅数据库已连接"}
+{"level":"info","time":"2026-01-28T19:31:14.969+0800","caller":"logger/zap.go:120","msg":"✅数据库迁移完成"}
+{"level":"info","time":"2026-01-29T10:29:01.162+0800","caller":"logger/zap.go:120","msg":"✅日志初始化完成"}
+{"level":"info","time":"2026-01-29T10:37:24.531+0800","caller":"logger/zap.go:120","msg":"✅日志初始化完成"}
+{"level":"info","time":"2026-01-29T10:37:24.556+0800","caller":"logger/zap.go:120","msg":"✅数据库已连接"}
+{"level":"info","time":"2026-01-29T10:37:24.556+0800","caller":"logger/zap.go:120","msg":"✅数据库迁移完成"}
+{"level":"info","time":"2026-01-29T10:37:24.561+0800","caller":"logger/zap.go:120","msg":"初始化默认数据..."}
+{"level":"info","time":"2026-01-29T10:37:24.580+0800","caller":"logger/zap.go:120","msg":"✅默认数据初始化完成"}
+{"level":"info","time":"2026-01-29T10:40:40.090+0800","caller":"logger/zap.go:120","msg":"✅日志初始化完成"}
+{"level":"info","time":"2026-01-29T10:40:40.100+0800","caller":"logger/zap.go:120","msg":"✅数据库已连接"}
+{"level":"info","time":"2026-01-29T10:40:40.387+0800","caller":"logger/zap.go:120","msg":"✅数据库迁移完成"}
+{"level":"info","time":"2026-01-29T10:40:40.389+0800","caller":"logger/zap.go:120","msg":"初始化默认数据..."}
+{"level":"info","time":"2026-01-29T10:40:40.553+0800","caller":"logger/zap.go:120","msg":"✅默认数据初始化完成"}
