@@ -1,6 +1,6 @@
 package config
 
-type Server struct {
+type ServerConfig struct {
 	Port int    `mapstructure:"port"`
 	Mode string `mapstructure:"mode"` // dev/beta/prod
 }
