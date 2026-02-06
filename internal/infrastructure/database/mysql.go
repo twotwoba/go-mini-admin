@@ -8,7 +8,7 @@ import (
 	gormlogger "gorm.io/gorm/logger"
 )
 
-func New(cfg *config.DatabaseConfig, mode string) (*gorm.DB, error) {
+func NewMysql(cfg *config.DatabaseConfig, mode string) (*gorm.DB, error) {
 	logLevel := gormlogger.Info
 	if mode == "release" {
 		logLevel = gormlogger.Warn

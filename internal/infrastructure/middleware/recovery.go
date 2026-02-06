@@ -18,7 +18,7 @@ func (m *Middleware) Recovery() gin.HandlerFunc {
 					zap.Any("error", err),                  // 结构化错误字段
 					zap.ByteString("stack", debug.Stack()), // 调用栈字段（[]byte 类型适配）
 				)
-				response.FailWithCode(c, http.StatusInternalServerError, "internal server error")
+				response.Result(c, http.StatusInternalServerError, response.CodeServerError, "internal server error", nil)
 				c.Abort()
 			}
 		}()

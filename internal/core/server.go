@@ -10,7 +10,6 @@ import (
 	"go-mini-admin/internal/infrastructure/middleware"
 	"go-mini-admin/internal/model"
 	"go-mini-admin/internal/repository"
-	"go-mini-admin/internal/router"
 	"go-mini-admin/internal/service"
 	"os"
 
@@ -20,7 +19,6 @@ import (
 // 系统入口
 func Run() {
 	initSystem()
-	// ServerRun()
 }
 
 // 系统初始化
@@ -38,7 +36,7 @@ func initSystem() {
 	}
 	logger.Info("✅日志初始化完成")
 
-	db, err := database.New(&cfg.Database, cfg.Server.Mode)
+	db, err := database.NewMysql(&cfg.Database, cfg.Server.Mode)
 	if err != nil {
 		fmt.Printf("⭕初始化数据库失败：%v\n", err)
 		os.Exit(1)
@@ -59,12 +57,7 @@ func initSystem() {
 
 	initDefaultData(db)
 
-	r := router.Setup(cfg.Server.Mode, handlers, mw)
-
-	addr := fmt.Sprintf(":%d", cfg.Server.Port)
-	if err := r.Run(addr); err != nil {
-		logger.Fatalf("❌服务启动失败: %v", err)
-	}
+	ServerRun(cfg, handlers, mw)
 }
 
 func initDefaultData(db *gorm.DB) {
