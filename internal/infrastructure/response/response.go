@@ -19,18 +19,6 @@ type PageData[T any] struct {
 	Data     []T `json:"data"`
 }
 
-const (
-	CodeSuccess = 0
-	CodeError   = 10000 // 通用错误码从10000开始
-	/**
-	 * other code error codes, depend on business
-	 * ......
-	 */
-	CodeUnauthorized = 401 // HTTP 状态码直接使用
-	CodeForbidden    = 403
-	CodeNotFound     = 404
-)
-
 func newResponse(code int, message string, data any) Response {
 	return Response{
 		Code:    code,
@@ -61,7 +49,7 @@ func PageSuccess[T any](c *gin.Context, data []T, total, page, pageSize int) {
 }
 
 func Fail(c *gin.Context, msg string) {
-	Result(c, http.StatusOK, CodeError, msg, nil)
+	Result(c, http.StatusOK, CodeServerError, msg, nil)
 }
 
 func FailWithCode(c *gin.Context, code int, msg string) {

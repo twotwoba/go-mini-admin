@@ -1,14 +1,19 @@
 package core
 
-import "github.com/gin-gonic/gin"
+import (
+	"fmt"
+	"go-mini-admin/config"
+	"go-mini-admin/internal/handler"
+	"go-mini-admin/internal/infrastructure/logger"
+	"go-mini-admin/internal/infrastructure/middleware"
+	"go-mini-admin/internal/router"
+)
 
-func ServerRun() *gin.Engine {
-	g := gin.New()
-	// 默认的不太够，使用第三方的来兼容处理
-	// g.Use(gin.Logger())
-	// g.Use(gin.Recovery())
+func ServerRun(cfg *config.Config, handlers *handler.Handlers, mw *middleware.Middleware) {
+	r := router.Setup(cfg.Server.Mode, handlers, mw)
 
-	// TODO
-
-	return g
+	addr := fmt.Sprintf(":%d", cfg.Server.Port)
+	if err := r.Run(addr); err != nil {
+		logger.Fatalf("❌服务启动失败: %v", err)
+	}
 }
