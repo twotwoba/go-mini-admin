@@ -5,15 +5,16 @@ import (
 	"go-mini-admin/internal/repository"
 )
 
-type Services struct {
+type Provider struct {
 	Auth AuthService
 	User UserService
 }
 
-func NewServices(repository *repository.Repositories, jwtManager *jwt.JWTManager) *Services {
+func NewProvider(repository *repository.Provider, jwtManager *jwt.JWTManager) *Provider {
 	userService := NewUserService(repository.User)
-	return &Services{
-		Auth: NewAuthService(userService, repository.User, jwtManager),
+	authService := NewAuthService(userService, repository.User, jwtManager)
+	return &Provider{
+		Auth: authService,
 		User: userService,
 	}
 }

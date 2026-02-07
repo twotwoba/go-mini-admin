@@ -50,9 +50,9 @@ func initSystem() {
 
 	jwtManager := jwt.New(&cfg.Jwt)
 
-	repos := repository.NewRepositories(db)
-	services := service.NewServices(repos, jwtManager)
-	handlers := handler.NewHandlers(services)
+	repos := repository.NewProvider(db)
+	services := service.NewProvider(repos, jwtManager)
+	handlers := handler.NewProvider(services)
 	mw := middleware.New(logger.Default(), repos.User, jwtManager)
 
 	initDefaultData(db)

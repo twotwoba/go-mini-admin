@@ -12,13 +12,13 @@ type IRouter interface {
 	RegisterRoutes(rg *gin.RouterGroup)
 }
 
-func NewRoutes(handlers *handler.Handlers, mw *middleware.Middleware) []IRouter {
+func NewRoutes(handlers *handler.Provider, mw *middleware.Middleware) []IRouter {
 	return []IRouter{
 		&authRouter{handlers.Auth, mw},
 	}
 }
 
-func Setup(mode string, handlers *handler.Handlers, mw *middleware.Middleware) *gin.Engine {
+func Setup(mode string, handlers *handler.Provider, mw *middleware.Middleware) *gin.Engine {
 	gin.SetMode(mode)
 	r := gin.New()
 

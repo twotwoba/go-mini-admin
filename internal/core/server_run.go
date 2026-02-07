@@ -9,7 +9,7 @@ import (
 	"go-mini-admin/internal/router"
 )
 
-func ServerRun(cfg *config.Config, handlers *handler.Handlers, mw *middleware.Middleware) {
+func ServerRun(cfg *config.Config, handlers *handler.Provider, mw *middleware.Middleware) {
 	r := router.Setup(cfg.Server.Mode, handlers, mw)
 
 	addr := fmt.Sprintf(":%d", cfg.Server.Port)

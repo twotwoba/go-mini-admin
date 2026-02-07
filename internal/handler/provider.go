@@ -2,12 +2,12 @@ package handler
 
 import "go-mini-admin/internal/service"
 
-type Handlers struct {
+type Provider struct {
 	Auth *AuthHandler
 }
 
-func NewHandlers(service *service.Services) *Handlers {
-	return &Handlers{
+func NewProvider(service *service.Provider) *Provider {
+	return &Provider{
 		Auth: NewAuthHandler(service.Auth),
 	}
 }

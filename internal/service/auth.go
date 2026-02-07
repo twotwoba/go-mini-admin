@@ -33,20 +33,20 @@ type LoginResponse struct {
 	Token string `json:"token"`
 }
 
-func (s authService) Register(req *CreateUserRequest) error {
+func (s *authService) Register(req *CreateUserRequest) error {
 	return s.userService.CreateUser(req)
 }
 
-func (s authService) Login(req *LoginRequest) (*LoginResponse, error) {
+func (s *authService) Login(req *LoginRequest) (*LoginResponse, error) {
 	return &LoginResponse{
 		Token: "sk-sadfgffas",
 	}, nil
 }
 
-func (s authService) Logout(userID int) error {
+func (s *authService) Logout(userID int) error {
 	return nil
 }
 
-func (s authService) GetUserInfo(userId int) (*model.User, error) {
-	return s.userRepo.GetUserByID(userId)
+func (s *authService) GetUserInfo(userID int) (*model.User, error) {
+	return s.userRepo.GetUserByID(userID)
 }
