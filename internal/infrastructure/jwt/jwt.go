@@ -38,7 +38,7 @@ func (j *JWTManager) GenerateToken(userID uint, username string) (string, error)
 			Issuer:    "go-mini-admin",
 		},
 	}
-	token := jwt.NewWithClaims(jwt.SigningMethodES256, claims)
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 	return token.SignedString([]byte(j.secret))
 }
 

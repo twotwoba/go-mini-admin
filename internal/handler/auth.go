@@ -18,7 +18,18 @@ func NewAuthHandler(authService service.AuthService) *AuthHandler {
 }
 
 func (h *AuthHandler) Login(c *gin.Context) {
-	// TODO
+	var req service.LoginRequest
+	if err := c.ShouldBindJSON(&req); err != nil {
+		response.Fail(c, err.Error())
+		return
+	}
+
+	resp, err := h.authService.Login(&req)
+	if err != nil {
+		response.Fail(c, err.Error())
+		return
+	}
+	response.Success(c, resp)
 }
 
 func (h *AuthHandler) Register(c *gin.Context) {

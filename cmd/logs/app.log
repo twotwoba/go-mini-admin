@@ -63,3 +63,20 @@
 {"level":"info","time":"2026-02-07T09:31:58.419+0800","caller":"middleware/logger.go:39","msg":"| 404 |       3.292µs |             ::1 | PUT     /api/v1/auth/register"}
 {"level":"info","time":"2026-02-07T09:32:02.615+0800","caller":"middleware/logger.go:39","msg":"| 200 |  126.048208ms |             ::1 | POST    /api/v1/auth/register"}
 {"level":"info","time":"2026-02-07T10:57:37.691+0800","caller":"middleware/logger.go:39","msg":"| 200 |      377.25µs |             ::1 | POST    /api/v1/auth/register"}
+{"level":"info","time":"2026-02-09T12:27:07.167+0800","caller":"middleware/logger.go:39","msg":"| 200 |  158.240042ms |             ::1 | POST    /api/v1/auth/register"}
+{"level":"info","time":"2026-02-09T12:27:10.473+0800","caller":"middleware/logger.go:39","msg":"| 200 |  118.442833ms |             ::1 | POST    /api/v1/auth/register"}
+{"level":"info","time":"2026-02-09T12:38:03.130+0800","caller":"middleware/logger.go:39","msg":"| 200 |  160.112667ms |             ::1 | POST    /api/v1/auth/register"}
+{"level":"info","time":"2026-02-09T12:38:15.903+0800","caller":"logger/zap.go:120","msg":"✅日志初始化完成"}
+{"level":"info","time":"2026-02-09T12:38:15.916+0800","caller":"logger/zap.go:120","msg":"✅数据库已连接"}
+{"level":"info","time":"2026-02-09T12:38:15.976+0800","caller":"logger/zap.go:120","msg":"✅数据库迁移完成"}
+{"level":"info","time":"2026-02-09T19:07:27.467+0800","caller":"middleware/logger.go:39","msg":"| 200 |   35.995459ms |             ::1 | POST    /api/v1/auth/login"}
+{"level":"info","time":"2026-02-09T19:10:59.637+0800","caller":"middleware/logger.go:39","msg":"| 200 | 2m15.945655375s |             ::1 | POST    /api/v1/auth/login"}
+{"level":"info","time":"2026-02-09T19:11:25.617+0800","caller":"logger/zap.go:120","msg":"✅日志初始化完成"}
+{"level":"info","time":"2026-02-09T19:11:25.638+0800","caller":"logger/zap.go:120","msg":"✅数据库已连接"}
+{"level":"info","time":"2026-02-09T19:11:25.703+0800","caller":"logger/zap.go:120","msg":"✅数据库迁移完成"}
+{"level":"info","time":"2026-02-09T19:11:52.882+0800","caller":"middleware/logger.go:39","msg":"| 200 |  118.697917ms |             ::1 | POST    /api/v1/auth/login"}
+{"level":"info","time":"2026-02-09T19:20:14.372+0800","caller":"middleware/logger.go:39","msg":"| 200 | 2m43.770027209s |             ::1 | POST    /api/v1/auth/login"}
+{"level":"info","time":"2026-02-09T19:22:06.122+0800","caller":"logger/zap.go:120","msg":"✅日志初始化完成"}
+{"level":"info","time":"2026-02-09T19:22:06.146+0800","caller":"logger/zap.go:120","msg":"✅数据库已连接"}
+{"level":"info","time":"2026-02-09T19:22:06.202+0800","caller":"logger/zap.go:120","msg":"✅数据库迁移完成"}
+{"level":"info","time":"2026-02-09T19:22:35.014+0800","caller":"middleware/logger.go:39","msg":"| 200 |  4.091352792s |             ::1 | POST    /api/v1/auth/login"}
