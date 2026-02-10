@@ -22,12 +22,12 @@ func NewUserService(userRepo repository.UserRepository) UserService {
 }
 
 type CreateUserRequest struct {
-	Username string `json:"username" binding:"required,min=5,max=50"`
-	Password string `json:"password" binding:"required,min=6,max=20"`
-	Email    string `json:"email" binding:"omitempty,email"`
-	Nickname string `json:"nickname" binding:"omitempty,min=5,max=50"`
-	Phone    string `json:"phone" binding:"omitempty,min=11,max=11"`
-	Status   int    `json:"status"`
+	Username string  `json:"username" binding:"required,min=5,max=50"`
+	Password string  `json:"password" binding:"required,min=6,max=20"`
+	Email    *string `json:"email" binding:"omitempty,email"`
+	Nickname string  `json:"nickname" binding:"omitempty,min=5,max=50"`
+	Phone    string  `json:"phone" binding:"omitempty,min=11,max=11"`
+	Status   int     `json:"status"`
 }
 
 func (s *userService) CreateUser(req *CreateUserRequest) error {

@@ -11,6 +11,7 @@ import (
 	"go-mini-admin/internal/model"
 	"go-mini-admin/internal/repository"
 	"go-mini-admin/internal/service"
+	"go-mini-admin/pkg/utils"
 	"os"
 
 	"gorm.io/gorm"
@@ -113,7 +114,7 @@ func initDefaultData(db *gorm.DB) {
 		Username: "admin",
 		Password: "$2a$10$N9qo8uLOickgx2ZMRZoMy.MqrqPiXQlFjxkNJ6fO2eUP5jMqXvLdC", // admin123
 		Nickname: "管理员",
-		Email:    "admin@example.com",
+		Email:    utils.StringPtr("admin@example.com"),
 		Status:   1,
 	}
 	db.Create(&adminUser)

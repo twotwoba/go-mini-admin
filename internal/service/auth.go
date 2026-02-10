@@ -69,7 +69,7 @@ func (s *authService) Login(req *LoginRequest) (*LoginResponse, error) {
 		ID:       user.ID,
 		Username: user.Username,
 		Nickname: user.Nickname,
-		Email:    user.Email,
+		Email:    *user.Email,
 		Phone:    user.Phone,
 		Avatar:   user.Avatar,
 		Status:   user.Status,
