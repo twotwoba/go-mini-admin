@@ -19,8 +19,11 @@ type Config struct {
 func Load() (*Config, error) {
 	configFile := getConfigFile()
 	if configFile == "" {
-		// 默认使用 dev 环境，
-		configFile = "../config.dev.yaml"
+		// 开发环境自动探测配置文件
+		configFile = findDevConfig()
+		if configFile == "" {
+			return nil, fmt.Errorf("未找到配置文件，请通过 -c 参数或 %s 环境变量指定", GMA_APP_ENV_FILE)
+		}
 		fmt.Printf("您正在使用默认配置文件: %s\n", configFile)
 	}
 
@@ -36,7 +39,7 @@ func Load() (*Config, error) {
 	return &cfg, nil
 }
 
-// GetConfigFile 获取配置文件
+// getConfigFile 获取配置文件
 // 优先级：命令行参数 > 环境变量 > 默认空 (由调用方处理默认逻辑)
 func getConfigFile() (configFile string) {
 	flag.StringVar(&configFile, "c", "", "choose config file.")
@@ -52,4 +55,20 @@ func getConfigFile() (configFile string) {
 	}
 
 	return
+}
+
+// findDevConfig 在常见位置查找开发环境配置文件
+func findDevConfig() string {
+	candidates := []string{
+		"config.dev.yaml",    // 当前目录 (GoLand 默认在项目根目录执行)
+		"./config.dev.yaml",  // 当前目录
+		"../config.dev.yaml", // 上级目录 (从 cmd/ 子目录执行时)
+	}
+
+	for _, path := range candidates {
+		if _, err := os.Stat(path); err == nil {
+			return path
+		}
+	}
+	return ""
 }

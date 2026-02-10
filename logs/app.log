@@ -1,0 +1,16 @@
+{"level":"info","time":"2026-02-10T22:19:20.482+0800","caller":"logger/zap.go:120","msg":"✅日志初始化完成"}
+{"level":"info","time":"2026-02-10T22:19:20.535+0800","caller":"logger/zap.go:120","msg":"✅数据库已连接"}
+{"level":"info","time":"2026-02-10T22:19:20.604+0800","caller":"logger/zap.go:120","msg":"✅数据库迁移完成"}
+{"level":"info","time":"2026-02-10T22:19:51.191+0800","caller":"logger/zap.go:120","msg":"✅日志初始化完成"}
+{"level":"info","time":"2026-02-10T22:19:51.214+0800","caller":"logger/zap.go:120","msg":"✅数据库已连接"}
+{"level":"info","time":"2026-02-10T22:19:51.293+0800","caller":"logger/zap.go:120","msg":"✅数据库迁移完成"}
+{"level":"fatal","time":"2026-02-10T22:19:51.293+0800","caller":"logger/zap.go:129","msg":"❌服务启动失败: listen tcp :8080: bind: address already in use"}
+{"level":"info","time":"2026-02-10T22:19:59.778+0800","caller":"logger/zap.go:120","msg":"✅日志初始化完成"}
+{"level":"info","time":"2026-02-10T22:19:59.785+0800","caller":"logger/zap.go:120","msg":"✅数据库已连接"}
+{"level":"info","time":"2026-02-10T22:19:59.850+0800","caller":"logger/zap.go:120","msg":"✅数据库迁移完成"}
+{"level":"info","time":"2026-02-10T22:20:43.628+0800","caller":"middleware/logger.go:39","msg":"| 200 | 39.027808125s |             ::1 | POST    /api/v1/auth/register"}
+{"level":"info","time":"2026-02-10T22:24:30.844+0800","caller":"middleware/logger.go:39","msg":"| 200 |  157.487917ms |             ::1 | POST    /api/v1/auth/register"}
+{"level":"info","time":"2026-02-10T22:24:52.387+0800","caller":"middleware/logger.go:39","msg":"| 200 |   127.31025ms |             ::1 | POST    /api/v1/auth/register"}
+{"level":"info","time":"2026-02-10T22:24:53.374+0800","caller":"middleware/logger.go:39","msg":"| 200 |  117.467667ms |             ::1 | POST    /api/v1/auth/register"}
+{"level":"info","time":"2026-02-10T22:25:02.629+0800","caller":"middleware/logger.go:39","msg":"| 200 |  121.488333ms |             ::1 | POST    /api/v1/auth/register"}
+{"level":"info","time":"2026-02-10T22:25:50.854+0800","caller":"middleware/logger.go:39","msg":"| 200 | 35.761615667s |             ::1 | POST    /api/v1/auth/register"}
