@@ -42,7 +42,6 @@ func initSystem() {
 		fmt.Printf("⭕初始化数据库失败：%v\n", err)
 		os.Exit(1)
 	}
-	defer database.Close(db)
 	logger.Info("✅数据库已连接")
 	if err := model.AutoMigrate(db, model.AllModels()...); err != nil {
 		logger.Fatalf("⭕数据库自动迁移失败：%v", err)
@@ -59,6 +58,11 @@ func initSystem() {
 	initDefaultData(db)
 
 	ServerRun(cfg, handlers, mw)
+
+	// 服务关闭后，清理资源
+	database.Close(db)
+	logger.Info("✅ 数据库连接已关闭")
+	logger.Info("👋 服务已退出")
 }
 
 func initDefaultData(db *gorm.DB) {

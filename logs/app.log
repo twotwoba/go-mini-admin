@@ -14,3 +14,6 @@
 {"level":"info","time":"2026-02-10T22:24:53.374+0800","caller":"middleware/logger.go:39","msg":"| 200 |  117.467667ms |             ::1 | POST    /api/v1/auth/register"}
 {"level":"info","time":"2026-02-10T22:25:02.629+0800","caller":"middleware/logger.go:39","msg":"| 200 |  121.488333ms |             ::1 | POST    /api/v1/auth/register"}
 {"level":"info","time":"2026-02-10T22:25:50.854+0800","caller":"middleware/logger.go:39","msg":"| 200 | 35.761615667s |             ::1 | POST    /api/v1/auth/register"}
+{"level":"info","time":"2026-02-10T22:46:39.165+0800","caller":"logger/zap.go:120","msg":"✅日志初始化完成"}
+{"level":"info","time":"2026-02-10T22:46:39.207+0800","caller":"logger/zap.go:120","msg":"✅数据库已连接"}
+{"level":"info","time":"2026-02-10T22:46:39.262+0800","caller":"logger/zap.go:120","msg":"✅数据库迁移完成"}
