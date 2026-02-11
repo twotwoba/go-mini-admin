@@ -8,7 +8,7 @@ import (
 	"github.com/spf13/viper"
 )
 
-// 配置文件格式入口
+// Config 配置文件格式入口
 type Config struct {
 	Server   ServerConfig   `mapstructure:"server"`
 	Database DatabaseConfig `mapstructure:"database"`
