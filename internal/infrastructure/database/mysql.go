@@ -38,9 +38,7 @@ func Close(db *gorm.DB) {
 	if err != nil {
 		return
 	}
-	sqlDB.Close()
-}
-
-func AutoMigrate(db *gorm.DB, models ...any) error {
-	return db.AutoMigrate(models...)
+	if err := sqlDB.Close(); err != nil {
+		return
+	}
 }

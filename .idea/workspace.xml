@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5466ce14-d8a0-4520-aefa-011035d9a105" name="更改" comment="feat: 优雅启停" />
+    <list default="true" id="5466ce14-d8a0-4520-aefa-011035d9a105" name="更改" comment="feat: 数据库关闭时错误处理">
+      <change afterPath="$PROJECT_DIR$/.ai/mcp/mcp.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/logs/app.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/core/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/core/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/infrastructure/database/mysql.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/infrastructure/database/mysql.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/infrastructure/database/redis.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/infrastructure/database/redis.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/app.log" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,19 +23,29 @@
       <entry key="e82bb9d8-eb7a-42d3-911b-2fc004ed6c89" value="Blue" />
     </colors>
   </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="64" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dockerfile" />
+      </list>
+    </option>
+  </component>
   <component name="GOROOT" url="file://$USER_HOME$/go/1.24.4/pkg/mod/golang.org/toolchain@v0.0.1-go1.25.1.darwin-arm64" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {}
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/twotwoba/go-mini-admin.git",
-    "accountId": "97061bb5-3f4c-4e00-af90-bd413bdbe94c"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {}
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/twotwoba/go-mini-admin.git&quot;,
+    &quot;accountId&quot;: &quot;97061bb5-3f4c-4e00-af90-bd413bdbe94c&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/go/1.24.4/pkg/mod/golang.org/toolchain@v0.0.1-go1.25.1.darwin-arm64/src/runtime/proc.go" root0="SKIP_INSPECTION" />
   </component>
@@ -35,8 +53,15 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -54,6 +79,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.GoLinterPluginOnboardingV2": "true",
     "RunOnceActivity.GoLinterPluginStorageMigration": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -61,12 +87,14 @@
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "go.sdk.automatically.set": "true",
     "last_opened_file_path": "/Users/eric/dev/go-mini-admin",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "advanced.settings"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -94,7 +122,6 @@
     <attachedChunks>
       <set>
         <option value="bundled-gosdk-72a9cf600ed8-dfa3e7267ae0-org.jetbrains.plugins.go.sharedIndexes.bundled-GO-253.30387.193" />
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-GO-253.30387.193" />
       </set>
     </attachedChunks>
   </component>
@@ -118,6 +145,21 @@
     <option featureType="dependencySupport" implementationName="vim:configuration" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -142,17 +184,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: 优雅启停" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 优雅启停" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/internal/service/user.go</url>
-          <line>46</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="feat: 数据库关闭时错误处理" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 数据库关闭时错误处理" />
   </component>
 </project>

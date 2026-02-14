@@ -17,7 +17,7 @@ import (
 	"gorm.io/gorm"
 )
 
-// 系统入口
+// Run 系统入口
 func Run() {
 	initSystem()
 }
